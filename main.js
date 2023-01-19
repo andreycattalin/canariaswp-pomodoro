@@ -56,3 +56,14 @@ function startTimer() {
     document.getElementById("timer").innerHTML = myTime;
   }, 1000); // 1000 ms es cada 1 segundo
 }
+
+function editarTiempo() {
+  document.getElementById("modal-timer").classList.toggle("hidden");
+}
+
+function guardarTiempo() {
+  document.getElementById("modal-timer").classList.toggle("hidden");
+  let valorMinutosUsuario = document.getElementById("newtime").value;
+  timeRemaining = valorMinutosUsuario * 60;
+  document.getElementById("timer").innerHTML = valorMinutosUsuario + ":00";
+}
