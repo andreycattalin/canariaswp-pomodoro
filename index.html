@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+
+<body class="bg-slate-900">
+
+
+    <div class="bg-slate-800 w-8/12 mx-auto text-center p-5	rounded-lg mt-16">
+        <h1 id="timer" class="text-white text-5xl font-bold">25:00</h1>
+
+        <button id="btn-start" onclick="activateTimer()"
+            class="text-black py-2 px-8 bg-white rounded mt-4 hover:bg-slate-500 ease-in duration-300">Empezar</button>
+        <button id="btn-stop" onclick="activateTimer()"
+            class="hidden text-white py-2 px-8 bg-red-500 rounded mt-4 hover:bg-red-600 ease-in duration-300">Parar</button>
+    </div>
+
+
+    <div class="bg-slate-800 w-8/12 mx-auto mt-6 rounded-lg p-4 text-white">
+        <h2 id="total" class="border-b-4 pb-2 mb-4">2 Tareas</h2>
+
+        <div id="all-tasks">
+
+        </div>
+    </div>
+
+
+    <button onclick="openDialog()"
+        class="ease-in duration-200 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 mx-auto block mt-6 px-6 py-2 rounded text-white hover:bg-gradient-to-r hover:from-green-100 hover:via-blue-100 hover:to-purple-100 hover:text-black">Añadir
+        tarea</button>
+
+    <div id="modal"
+        class="hidden bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0">
+        <div class="bg-white px-16 py-14 rounded-md text-center">
+            <h1 class="text-xl mb-4 font-bold text-slate-500">Crear tarea</h1>
+            <input id="newtarea" type="text" name="tarea"
+                class="mt-1 mb-4 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+                placeholder="Escribir tarea" />
+            <button onclick="openDialog()" class="bg-red-500 px-4 py-2 rounded-md text-md text-white">Cancelar</button>
+            <button onclick="addTarea()"
+                class="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold">Guardar</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="tasks.js"></script>
+</body>
+
+</html>
